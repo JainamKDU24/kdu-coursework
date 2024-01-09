@@ -31,6 +31,7 @@ public class Main {
                     Student newStudent = new Student(id, age, name, grade);
                     repository.add(newStudent);
                     Logging.add(newStudent);
+                    System.out.println("Student added: " + newStudent);
                     break;
 
                 case 2:
