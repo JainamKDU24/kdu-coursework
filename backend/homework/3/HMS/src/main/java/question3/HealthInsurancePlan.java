@@ -1,6 +1,6 @@
-package Question3;
+package question3;
 
-import Question4.*;
+import question4.*;
 
 public abstract class HealthInsurancePlan {
     private double coverage;
