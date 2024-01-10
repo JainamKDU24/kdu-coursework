@@ -28,7 +28,7 @@ public class Billing {
             }
 
             // discount if no insurance plan
-            if (patientInsurancePlan == null) {
+            else  {
                 discount = 20;
             }
 
