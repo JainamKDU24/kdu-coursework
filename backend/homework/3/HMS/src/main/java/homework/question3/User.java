@@ -3,7 +3,10 @@ package homework.question3;
 
 public class User {
     private long id;
-    private String firstName,lastName,gender,email;
+    private String firstName;
+    private String lastName;
+    private String gender;
+    private String email;
     private boolean insured;
     private HealthInsurancePlan insurancePlan; //HAS-A relationship
 
