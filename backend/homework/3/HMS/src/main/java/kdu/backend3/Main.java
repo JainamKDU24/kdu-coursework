@@ -20,12 +20,9 @@ public class Main {
 
         patient.setInsurancePlan(insurancePlan);
 
-        double[] payments = billing.computePaymentAmount(patient, 1000.0);
+        double[] payments = Billing.computePaymentAmount(patient, 1000.0);
 
-        logger.info("Insurance coverage: $" + toString(payments[0]));
-        logger.info("Patient has to pay: $" + toString(payments[1]));
-    }
-    private static double toString(double v) {
-        return (v);
+        logger.info("Insurance coverage: {}" , (payments[0]));
+        logger.info("Patient has to pay: {}" , (payments[1]));
     }
 }

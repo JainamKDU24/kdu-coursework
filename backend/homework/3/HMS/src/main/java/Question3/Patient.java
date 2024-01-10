@@ -1,4 +1,4 @@
-package Q3;
+package Question3;
 
 public class Patient {
     private long patientId;

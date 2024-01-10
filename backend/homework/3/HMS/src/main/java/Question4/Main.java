@@ -1,5 +1,5 @@
-package Q4;
-import Q3.*;
+package Question4;
+import Question3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,10 +12,6 @@ public class Main {
 
         insurancePlan.setOfferedBy(insuranceBrand);
         staff.setInsurancePlan(insurancePlan);
-        logger.info("Updated Premium amount : {}",toString(insurancePlan.computeMonthlyPremium(5000,56,true)));
-    }
-
-    private static double toString(double v) {
-        return (v);
+        logger.info("Updated Premium amount : {}",(insurancePlan.computeMonthlyPremium(5000,54,true)));
     }
 }

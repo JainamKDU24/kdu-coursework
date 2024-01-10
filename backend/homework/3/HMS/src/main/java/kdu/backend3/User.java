@@ -2,7 +2,10 @@ package kdu.backend3;
 
 public class User {
     private long id;
-    private String firstName,lastName,gender,email;
+    private String firstName;
+    private String lastName;
+    private  String gender;
+    private String email;
 
     public long getId() {
         return id;

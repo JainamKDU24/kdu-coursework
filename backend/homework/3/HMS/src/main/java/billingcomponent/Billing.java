@@ -1,6 +1,9 @@
 package billingcomponent;
 import kdu.backend3.Patient;
-public class billing{
+public class Billing {
+    private Billing() {
+    }
+
     public static double[] computePaymentAmount(Patient patient, double amount) {
         double[] payments = new double[2];
 
@@ -25,7 +28,7 @@ public class billing{
             }
 
             // discount if no insurance plan
-            else  {
+            if (patientInsurancePlan == null) {
                 discount = 20;
             }
 

@@ -1,4 +1,4 @@
-package Q3;
+package Question3;
 
 public class Platinum extends HealthInsurancePlan{
     public Platinum() {
