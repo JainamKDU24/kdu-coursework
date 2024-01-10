@@ -1,5 +1,6 @@
-package question4;
-import question3.*;
+package hw.question4;
+import homework.question3.*;
+
 
 public class BlueCrossBlueShield implements InsuranceBrand{
     @Override

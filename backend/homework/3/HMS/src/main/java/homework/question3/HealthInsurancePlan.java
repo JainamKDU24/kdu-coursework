@@ -1,6 +1,7 @@
-package question3;
+package homework.question3;
 
-import question4.*;
+import hw.question4.InsuranceBrand;
+
 
 public abstract class HealthInsurancePlan {
     private double coverage;

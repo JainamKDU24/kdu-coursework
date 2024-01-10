@@ -1,4 +1,4 @@
-package question3;
+package homework.question3;
 
 public class Silver extends HealthInsurancePlan{
     public Silver() {

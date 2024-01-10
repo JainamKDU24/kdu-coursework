@@ -27,9 +27,8 @@ public class Billing {
                 discount=25;
             }
 
-            // discount if no insurance plan
-            else  {
-                discount = 20;
+            else{
+                discount=20;
             }
 
             //amount patient has to pay

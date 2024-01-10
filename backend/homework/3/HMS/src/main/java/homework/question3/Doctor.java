@@ -1,4 +1,4 @@
-package question3;
+package homework.question3;
 
 public class Doctor extends Staff{
     private long doctorId;
