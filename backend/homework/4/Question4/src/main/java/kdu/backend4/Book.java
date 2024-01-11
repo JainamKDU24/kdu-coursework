@@ -1,6 +1,6 @@
 package kdu.backend4;
 
-public class Book implements Comparable {
+public class Book implements Comparable<Book> {
     private String title;
     private String author;
     private int year;
@@ -73,8 +73,8 @@ public class Book implements Comparable {
         return year == other.year;
     }
 
-    public int compareTo(Object book) {
-        return getTitle().compareTo(((Book)book).getTitle()); // utilizing String’s compareTo
+    @Override
+    public int compareTo(Book book) {
+        return getTitle().compareTo(book.getTitle());
     }
-
 }
