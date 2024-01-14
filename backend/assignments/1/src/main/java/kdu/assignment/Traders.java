@@ -90,9 +90,9 @@ public class Traders {
 
                     Coins coin = getCoinByNameOrCode(coins, coinSymbol);
                     if (coin != null) {
-                        double currentPrice = coin.getPrice();
+                        double initialPrice= LoadCoinsTraders.getPriceList().getOrDefault(coinSymbol, 0.0);
                         // Sufficient coins bought to cover the sell
-                        return (currentPrice  * quantity);
+                        return ((currentPrice-initialPrice)  * quantity);
                     }
                     return 0;
                 })
