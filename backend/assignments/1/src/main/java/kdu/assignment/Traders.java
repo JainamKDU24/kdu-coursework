@@ -1,6 +1,5 @@
 package kdu.assignment;
 
-import java.io.FileNotFoundException;
 
 import java.io.IOException;
 
@@ -26,7 +25,7 @@ public class Traders {
     private  Map<String, Integer> portfolio;
 
 
-    public Traders(String firstName, String lastName, String phone, String walletAddress) throws FileNotFoundException {
+    public Traders(String firstName, String lastName, String phone, String walletAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -62,7 +61,7 @@ public class Traders {
         try {
             Files.write(path, contentBytes, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            logger.logInfo("");
         }
     }
     Path path1 = Path.of(fileName2);
@@ -78,10 +77,10 @@ public class Traders {
         try {
             Files.write(path1, contentBytes, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            logger.logInfo("");
         }
     }
-    public double getTotalProfitLoss(ArrayList<Coins> coins) {
+    public double getTotalProfitLoss(List<Coins> coins) {
 
         return portfolio.entrySet().stream()
                 .mapToDouble(entry -> {
@@ -90,6 +89,7 @@ public class Traders {
 
                     Coins coin = getCoinByNameOrCode(coins, coinSymbol);
                     if (coin != null) {
+                        double currentPrice = coin.getPrice();
                         double initialPrice= LoadCoinsTraders.getPriceList().getOrDefault(coinSymbol, 0.0);
                         // Sufficient coins bought to cover the sell
                         return ((currentPrice-initialPrice)  * quantity);
@@ -99,14 +99,14 @@ public class Traders {
                 .sum();
     }
 
-    public static void showTop5andBottom5Traders(ArrayList<Coins> coins,ArrayList<Traders> traders,Integer N) {
-        List<Traders> topTraders = traders.stream().sorted((trader, t1) -> (int) (t1.getTotalProfitLoss(coins) - trader.getTotalProfitLoss(coins))).limit(N).toList();
-        logger.logInfo("Top "+ N +" traders:- ");
+    public static void showTop5andBottom5Traders(List<Coins> coins,List<Traders> traders,Integer num) {
+        List<Traders> topTraders = traders.stream().sorted((trader, t1) -> (int) (t1.getTotalProfitLoss(coins) - trader.getTotalProfitLoss(coins))).limit(num).toList();
+        logger.logInfo("Top "+ num +" traders:- ");
         for(Traders t: topTraders){
             logger.logInfo(t.getFirstName());
         }
-        List<Traders> bottomTraders = traders.stream().sorted((trader, t1) -> (int) (trader.getTotalProfitLoss(coins) - t1.getTotalProfitLoss(coins))).limit(N).toList();
-        logger.logInfo("Bottom "+ N +" traders:- ");
+        List<Traders> bottomTraders = traders.stream().sorted((trader, t1) -> (int) (trader.getTotalProfitLoss(coins) - t1.getTotalProfitLoss(coins))).limit(num).toList();
+        logger.logInfo("Bottom "+ num +" traders:- ");
         for(Traders t: bottomTraders){
             logger.logInfo(t.getFirstName());
         }

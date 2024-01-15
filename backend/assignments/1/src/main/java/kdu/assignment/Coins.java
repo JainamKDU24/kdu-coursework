@@ -3,17 +3,26 @@ import java.util.*;
 
 
 public class Coins {
+    private int rank;
     private  String name;
     private  String symbol;
     private double price;
     private long circulatingSupply;
 
+    public int getRank() {
+        return rank;
+    }
 
-    public Coins(String name, String symbol, double price, long circulatingSupply) {
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+
+    public Coins(int rank, String name, String symbol, double price, long circulatingSupply) {
         this.name = name;
         this.symbol = symbol;
         this.price = price;
         this.circulatingSupply = circulatingSupply;
+        this.rank=rank;
     }
 
     public String getName() {
@@ -63,5 +72,4 @@ public class Coins {
                 .limit(n)
                 .toList();
     }
-
 }

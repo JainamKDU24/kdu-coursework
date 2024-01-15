@@ -7,9 +7,6 @@ public class Logging {
     private static final Logger logger = LoggerFactory.getLogger(Logging.class);
 
 
-    public Logging() {
-    }
-
     public void logInfo(String msg) {
         logger.info(msg);
     }

@@ -28,11 +28,12 @@ public class LoadCoinsTraders {
         List<Coins> coins = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            br.readLine(); // Skip header line
-
             String line;
+            line=br.readLine(); // Skip header line
+
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(",");
+                int rank= Integer.parseInt(fields[1].trim());
                 String name = fields[2].trim();
                 String symbol = fields[3].trim();
                 double price = Double.parseDouble(fields[4].trim());
@@ -40,7 +41,7 @@ public class LoadCoinsTraders {
 
                 setPriceList(priceList,symbol,price);
 
-                Coins coin = new Coins(name, symbol, price, circulatingSupply);
+                Coins coin = new Coins(rank,name, symbol, price, circulatingSupply);
                 coins.add(coin);
             }
         } catch (IOException e) {
@@ -54,9 +55,9 @@ public class LoadCoinsTraders {
         List<Traders> traders = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            br.readLine(); // Skip header line
-
             String line;
+            line = br.readLine(); // Skip header line
+
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(",");
                 String firstName = fields[1].trim();
