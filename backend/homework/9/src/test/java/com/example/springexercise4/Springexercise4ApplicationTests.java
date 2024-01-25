@@ -1,0 +1,13 @@
+package com.example.springexercise4;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Springexercise4ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
