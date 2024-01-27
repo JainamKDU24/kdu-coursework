@@ -11,6 +11,5 @@ class CachingApplicationTest {
     @Test
     void contextLoads() {
         // Add an assertion to ensure that the application context loads successfully
-        assertTrue(true, "Application context loads successfully");
     }
 }
