@@ -105,6 +105,7 @@ public class GeocodingServiceImpl implements GeoCodingService {
                     if (!address.toLowerCase().contains("goa")) {
                         logger.info("Caching the current record for address: {}", address);
                         caffeineCacheManager.getCache("geocoding").put(address, geoCodingResponse);
+                        logger.info("Latitude: {}, longitude: {} for address : {}",latitude,longitude,address);
                     }
                 } else {
                     throw new MyException(HttpStatus.NOT_FOUND.getReasonPhrase());
@@ -117,6 +118,7 @@ public class GeocodingServiceImpl implements GeoCodingService {
         } catch (HttpClientErrorException | IOException e) {
             logger.error(String.valueOf(e));
         }
+        logger.info("Response retrieved using 3rd party API for address: {}", address);
         return geoCodingResponse;
     }
 }

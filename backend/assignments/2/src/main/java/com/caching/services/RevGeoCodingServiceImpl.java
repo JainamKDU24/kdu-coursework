@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Objects;
 
 /**
  * Service implementation for reverse geocoding operations.
@@ -46,7 +47,7 @@ public class RevGeoCodingServiceImpl implements RevGeoCodingService {
         Cache cache = caffeineCacheManager.getCache("reverse-geocoding");
         if (cache != null && cache.get(cacheKey) != null) {
             logger.info("Response retrieved using cache for latitude: {}, longitude: {}", latitude, longitude);
-            return (ReverseGeoCodingResponse) cache.get(cacheKey).get();
+            return (ReverseGeoCodingResponse) Objects.requireNonNull(cache.get(cacheKey)).get();
         } else {
             return getReverseGeoCoding(latitude, longitude);
         }
@@ -93,6 +94,7 @@ public class RevGeoCodingServiceImpl implements RevGeoCodingService {
                     );
                     String cacheKey = String.format("%f,%f", latitude, longitude);
                     caffeineCacheManager.getCache("reverse-geocoding").put(cacheKey, reverseGeoCodingResponse);
+                    logger.info("The for address: {}, for latitude: {}, longitude: {}",reverseGeoCodingResponse.getAddress(),latitude,longitude);
                 }
             } else {
                 logger.info("GET request failed");
@@ -100,6 +102,7 @@ public class RevGeoCodingServiceImpl implements RevGeoCodingService {
         } catch (IOException e) {
             logger.error(String.valueOf(e));
         }
+        logger.info("Response retrieved using 3rd party API for latitude: {}, longitude: {}", latitude,longitude);
         return reverseGeoCodingResponse;
     }
 }
