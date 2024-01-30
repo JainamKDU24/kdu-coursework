@@ -8,20 +8,39 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service class for managing Person entities.
+ */
 @Service
 public class PersonService {
 
     @Autowired
     PersonDAO personDAO;
 
+    /**
+     * Adds a person to the database.
+     *
+     * @param person The Person object to add.
+     */
     public void addPerson(Person person){
         personDAO.getPersonList().add(person);
     }
 
+    /**
+     * Retrieves all persons from the database.
+     *
+     * @return A list of all persons.
+     */
     public List<Person> getAll(){
         return personDAO.getPersonList();
     }
 
+    /**
+     * Retrieves a person by username from the database.
+     *
+     * @param name The username of the person to retrieve.
+     * @return The Person object corresponding to the username, or null if not found.
+     */
     public Person getPersonUsername(String name){
         for(Person p : personDAO.getAllPersons()){
             if(p.getUsername().equals(name)){
@@ -31,14 +50,19 @@ public class PersonService {
         return null;
     }
 
+    /**
+     * Retrieves detailed information about a person by username.
+     *
+     * @param name The username of the person.
+     * @return A PersonResponseDTO object containing information about the person.
+     */
     public PersonResponseDTO getPerson(String name) {
         for (Person v : personDAO.getPersonList()) {
             if (v.getUsername().equalsIgnoreCase(name)) {
-                System.out.println(v.getUsername());
                 return PersonResponseDTO.builder()
                         .name(v.getName())
                         .email(v.getEmail())
-                        .role(v.getRole()    )
+                        .role(v.getRole())
                         .build();
             }
         }

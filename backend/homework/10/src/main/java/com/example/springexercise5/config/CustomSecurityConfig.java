@@ -12,9 +12,19 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+/**
+ * Configuration class for custom security configuration in the Spring application.
+ */
 @Configuration
 public class CustomSecurityConfig {
 
+    /**
+     * Defines a custom security filter chain with configured filters and authorization rules.
+     *
+     * @param http The HttpSecurity object to configure security rules.
+     * @return A SecurityFilterChain object representing the custom security filter chain.
+     * @throws Exception If an error occurs during configuration.
+     */
     @Bean
     SecurityFilterChain customDefaultFilter(HttpSecurity http) throws Exception {
         http.
@@ -28,6 +38,12 @@ public class CustomSecurityConfig {
         http.httpBasic(withDefaults());
         return http.build();
     }
+
+    /**
+     * Creates a BCryptPasswordEncoder bean for password encoding.
+     *
+     * @return A PasswordEncoder object using BCrypt algorithm.
+     */
     @Bean
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

@@ -19,10 +19,22 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Filter class for generating JWT token upon successful authentication.
+ */
 public class TokenGeneratorFilter extends OncePerRequestFilter {
     public static final String JWT_KEY = "jxgEQeXHuPq8VdbyYFNkANdudQ53YUn4";
     public static final String JWT_HEADER = "Authorization";
 
+    /**
+     * Generates JWT token upon successful authentication and adds it to the response header.
+     *
+     * @param request     The HttpServletRequest object.
+     * @param response    The HttpServletResponse object.
+     * @param filterChain The FilterChain object.
+     * @throws ServletException If a servlet exception occurs.
+     * @throws IOException      If an I/O exception occurs.
+     */
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -35,17 +47,29 @@ public class TokenGeneratorFilter extends OncePerRequestFilter {
                     .expiration(new Date((new Date()).getTime() + 30000000))
                     .signWith(key).compact();
             response.setHeader(JWT_HEADER, jwt);
-            System.out.println(jwt);//token generation
+            System.out.println(jwt); // Print generated token
         }
 
         filterChain.doFilter(request, response);
     }
 
+    /**
+     * Determines if the filter should not be applied based on the request path.
+     *
+     * @param request The HttpServletRequest object.
+     * @return True if the filter should not be applied, false otherwise.
+     */
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         return !request.getServletPath().equals("/person/login");
     }
 
+    /**
+     * Populates authorities from the authentication object.
+     *
+     * @param collection The collection of GrantedAuthority objects.
+     * @return A string representation of authorities.
+     */
     private String populateAuthorities(Collection<? extends GrantedAuthority> collection) {
         Set<String> authoritiesSet = new HashSet<>();
         for (GrantedAuthority authority : collection) {

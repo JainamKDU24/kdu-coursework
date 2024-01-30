@@ -14,12 +14,22 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Custom UserDetailsService implementation for loading user details from the PersonService.
+ */
 @Component
 public class PersonUserDetails implements UserDetailsService {
 
     @Autowired
     PersonService personService;
 
+    /**
+     * Loads user details by username.
+     *
+     * @param username The username of the user.
+     * @return A UserDetails object representing the user details.
+     * @throws UsernameNotFoundException If the user details are not found.
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Person person = personService.getPersonUsername(username);
