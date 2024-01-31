@@ -14,8 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class TenantController {
 
+    TenantService tenantService;
+
     @Autowired
-    private TenantService tenantService;
+    public TenantController(TenantService tenantService){
+        this.tenantService=tenantService;
+    }
 
     @PostMapping("/tenant-data")
     public ResponseEntity<String> saveTenantData(@RequestBody TenantDataDTO tenantData) {

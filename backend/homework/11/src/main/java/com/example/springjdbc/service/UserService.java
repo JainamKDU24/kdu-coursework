@@ -16,11 +16,16 @@ import java.util.UUID;
  */
 @Service
 public class UserService {
-    @Autowired
-    private UserDao userDao;
+
+    UserDao userDao;
+
+    JdbcTemplate jdbcTemplate;
 
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    public UserService(JdbcTemplate jdbcTemplate,UserDao userDao){
+        this.jdbcTemplate=jdbcTemplate;
+        this.userDao=userDao;
+    }
 
     /**
      * Saves a user.

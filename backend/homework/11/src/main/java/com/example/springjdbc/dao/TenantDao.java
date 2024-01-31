@@ -15,9 +15,12 @@ import java.util.UUID;
  */
 @Component
 public class TenantDao {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    public TenantDao(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate;
+    }
     public Tenant getTenant(UUID tenantId) {
         String sql = "SELECT * FROM tenants WHERE id = ?";
         return jdbcTemplate.queryForObject(sql, new Object[]{tenantId}, new TenantMapper());

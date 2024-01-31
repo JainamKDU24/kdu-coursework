@@ -14,8 +14,12 @@ import java.util.UUID;
  */
 @Service
 public class ShiftTypeService {
+    ShiftTypeDao shiftTypeDao;
+
     @Autowired
-    private ShiftTypeDao shiftTypeDao;
+    public ShiftTypeService(ShiftTypeDao shiftTypeDao){
+        this.shiftTypeDao=shiftTypeDao;
+    }
 
     /**
      * Saves a shift type.

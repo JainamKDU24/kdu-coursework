@@ -15,8 +15,12 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ShiftTypeDao {
+    JdbcTemplate jdbcTemplate;
+
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    public ShiftTypeDao(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     /**
      * Saves a Shift_Type entity to the database.

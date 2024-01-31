@@ -14,8 +14,26 @@ import java.util.List;
  */
 @Service
 public class TenantService {
+    TenantDao tenantDao;
+
+    ShiftService shiftService;
+
+    UserService userService;
+
+    ShiftTypeService shiftTypeService;
+
+
+    ShiftUserService shiftUserService;
+
+
     @Autowired
-    private TenantDao tenantDao;
+    public TenantService(TenantDao tenantDao,ShiftService shiftService,UserService userService,ShiftTypeService shiftTypeService,ShiftUserService shiftUserService){
+        this.tenantDao = tenantDao;
+        this.shiftService=shiftService;
+        this.userService=userService;
+        this.shiftTypeService=shiftTypeService;
+        this.shiftUserService=shiftUserService;
+    }
 
     /**
      * Retrieves all tenants.
@@ -25,18 +43,6 @@ public class TenantService {
     public List<Tenant> getAllTenants() {
         return tenantDao.getAllTenants();
     }
-
-    @Autowired
-    private ShiftService shiftService;
-
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private ShiftTypeService shiftTypeService;
-
-    @Autowired
-    private ShiftUserService shiftUserService;
 
     /**
      * Saves data for all entities associated with a tenant in one transaction.

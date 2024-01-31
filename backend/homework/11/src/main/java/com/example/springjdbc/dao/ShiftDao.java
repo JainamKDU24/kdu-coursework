@@ -15,8 +15,12 @@ import java.util.UUID;
  */
 @Component
 public class ShiftDao {
+    JdbcTemplate jdbcTemplate;
+
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    public ShiftDao(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     /**
      * Saves a Shift entity to the database.

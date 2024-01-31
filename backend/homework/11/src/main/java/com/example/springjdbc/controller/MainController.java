@@ -15,20 +15,25 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api")
 public class MainController {
-    @Autowired
-    private ShiftService shiftService;
+    TenantService tenantService;
+
+    ShiftService shiftService;
+
+    UserService userService;
+
+    ShiftTypeService shiftTypeService;
+
+    ShiftUserService shiftUserService;
+
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
-    private ShiftTypeService shiftTypeService;
-
-    @Autowired
-    private ShiftUserService shiftUserService;
-
-    @Autowired
-    private TenantService tenantService;
+    public MainController(TenantService tenantService,ShiftService shiftService,UserService userService,ShiftTypeService shiftTypeService,ShiftUserService shiftUserService){
+        this.tenantService = tenantService;
+        this.shiftService=shiftService;
+        this.userService=userService;
+        this.shiftTypeService=shiftTypeService;
+        this.shiftUserService=shiftUserService;
+    }
 
     /**
      * Endpoint for saving a Shift entity.

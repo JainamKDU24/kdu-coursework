@@ -16,8 +16,12 @@ import java.util.UUID;
  */
 @Component
 public class UserDao {
+    JdbcTemplate jdbcTemplate;
+
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    public UserDao(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     /**
      * Saves a User entity in the database.

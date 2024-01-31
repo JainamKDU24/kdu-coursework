@@ -14,8 +14,12 @@ import java.util.UUID;
  */
 @Service
 public class ShiftUserService {
+
+    ShiftUserDao shiftUserDao;
     @Autowired
-    private ShiftUserDao shiftUserDao;
+    public ShiftUserService(ShiftUserDao shiftUserDao){
+        this.shiftUserDao=shiftUserDao;
+    }
 
     /**
      * Saves a shift user.
