@@ -1,0 +1,31 @@
+INSERT INTO users (username, password, name, firstName, lastName, emailId)
+VALUES ('user1', 'password1', 'John Doe', 'John', 'Doe', 'john.doe@example.com');
+
+INSERT INTO users (username, password, name, firstName, lastName, emailId)
+VALUES ('user2', 'password2', 'Jane Smith', 'Jane', 'Smith', 'jane.smith@example.com');
+
+INSERT INTO houses (id, address, house_name)
+VALUES (uuid_generate_v4(), '123 Main St', 'House A');
+
+INSERT INTO houses (id, address, house_name)
+VALUES (uuid_generate_v4(), '456 Elm St', 'House B');
+
+INSERT INTO house_users (houseUserId, house_id, user_id, role)
+VALUES (uuid_generate_v4(), 'house_id_1', 'user1', 'ADMIN');
+
+INSERT INTO house_users (houseUserId, house_id, user_id, role)
+VALUES (uuid_generate_v4(), 'house_id_2', 'user2', 'USER');
+
+INSERT INTO devices (kickstonid, deviceusername, devicepassword, room_id, house_id)
+VALUES ('device_id_1', 'username1', 'password1', 'room_id_1', 'house_id_1');
+
+INSERT INTO devices (kickstonid, deviceusername, devicepassword, room_id, house_id)
+VALUES ('device_id_2', 'username2', 'password2', 'room_id_2', 'house_id_2');
+
+INSERT INTO inventories (kickstonid, deviceusername, devicepassword, manufacturedatetime, manufacturefactoryplace)
+VALUES ('inventory_id_1', 'username1', 'password1', '2022-01-01', 'Factory A');
+
+INSERT INTO inventories (kickstonid, deviceusername, devicepassword, manufacturedatetime, manufacturefactoryplace)
+VALUES ('inventory_id_2', 'username2', 'password2', '2022-02-01', 'Factory B');
+
+
