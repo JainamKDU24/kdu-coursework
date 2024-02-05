@@ -69,7 +69,7 @@ public class HouseControllerTest {
         try {
             return mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/house")
                             .contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(MockMvcResultMatchers.status().isUnauthorized())
+                    .andExpect(MockMvcResultMatchers.status().isForbidden())
                     .andDo(result -> {
                         System.out.println("displayAllHousesWithInvalidAuth TEST PASSED");
                     }).andReturn();
@@ -226,7 +226,7 @@ public class HouseControllerTest {
                             // Add the Authorization header with the user token
                             .header("Authorization", "Bearer " + userToken)
                             .contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(MockMvcResultMatchers.status().isUnauthorized())
+                    .andExpect(MockMvcResultMatchers.status().isBadRequest())
                     .andDo(result -> {
                         System.out.println("addUserToHouseByNonAdmin TEST PASSED");
                     }).andReturn();

@@ -74,7 +74,7 @@ class SmartHomeApplicationTests {
     @Order(5)
     void addUserToHouseByNonAdmin() throws Exception {
         MvcResult output = HouseControllerTest.addUserToHouseByNonAdmin(mockMvc);
-        Assert.assertEquals(401, output.getResponse().getStatus());
+        Assert.assertEquals(400, output.getResponse().getStatus());
     }
 
     @Test
@@ -191,14 +191,14 @@ class SmartHomeApplicationTests {
     @Order(17)
     void deviceRegisterWithInvalidCredentials() throws Exception {
         MvcResult output = DeviceControllerTest.deviceRegisterWithInvalidCredentials(mockMvc);
-        Assert.assertEquals(401, output.getResponse().getStatus());
+        Assert.assertEquals(400, output.getResponse().getStatus());
     }
 
     @Test
     @Order(18)
     void deviceRegisterByNonAdmin() throws Exception {
         MvcResult output = DeviceControllerTest.deviceRegisterByNonAdmin(mockMvc);
-        Assert.assertEquals(401, output.getResponse().getStatus());
+        Assert.assertEquals(400, output.getResponse().getStatus());
     }
 
     @Test

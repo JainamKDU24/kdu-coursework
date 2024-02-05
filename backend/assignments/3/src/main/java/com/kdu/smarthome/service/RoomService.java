@@ -28,24 +28,28 @@ public class RoomService {
     }
 
     /**
-     * Adds a room to a given house.
+     * Adds a new room to the specified house.
      *
      * @param houseId    The ID of the house to which the room will be added.
      * @param addRoomDTO The DTO containing information about the room to be added.
-     * @return A DTO containing details of the added room.
-     * @throws NotFound       If the house does not exist.
-     * @throws InvalidRequest If an error occurs while adding the room.
+     * @return Details of the added room.
+     * @throws NotFound       If the specified house does not exist.
+     * @throws InvalidRequest If the operation fails for any other reason.
      */
     public RoomAddedDTO addRoomToHouse(String houseId, AddRoomDTO addRoomDTO) {
-        House house = houseRepo.findById(houseId).orElseThrow(() -> new NotFound("House does not exist"));
-
-        Room room = RoomUtil.dtotoEntity(addRoomDTO, house);
-
         try {
-            return RoomUtil.roomAddRequest(roomRepo.save(room), "Room added to given house", HttpStatus.OK);
-        } catch (Exception e) {
+            House house = houseRepo.findById(houseId).orElse(null);
+            if(Objects.isNull(house)){
+                throw new NotFound("House does not exist");
+            }
+            Room room = RoomUtil.dtotoEntity(addRoomDTO,house);
+            return RoomUtil.roomAddRequest(roomRepo.save(room),"Room added to given house", HttpStatus.OK);
+        }
+        catch (NotFound e){
+            throw new NotFound("Room cannot be added. " + e.getMessage());
+        }
+        catch (Exception e){
             throw new InvalidRequest("Failed to add room");
         }
     }
-
 }

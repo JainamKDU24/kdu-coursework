@@ -43,8 +43,8 @@ public class HouseController {
     }
 
     @PutMapping
-    public ResponseEntity<ApiResponseDTO> updateHouseAddress(@RequestHeader String authorization,@RequestParam String houseId, @RequestParam UpdateAddressDTO houseDTO) {
-        ApiResponseDTO updatedHouse=houseService.updateHouseAddress(houseId, houseDTO,authorization);
+    public ResponseEntity<ApiResponseDTO> updateHouseAddress(@RequestHeader String authorization,@RequestParam String houseId, @RequestBody UpdateAddressDTO updateAddressDTO) {
+        ApiResponseDTO updatedHouse=houseService.updateHouseAddress(houseId, updateAddressDTO ,authorization);
         return ResponseEntity.ok(updatedHouse);
     }
 

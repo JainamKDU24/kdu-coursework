@@ -11,7 +11,7 @@ import java.util.UUID;
 public class AddDeviceDTO {
     private String kickstonId;
 
-    private String houseid;
+    private String houseId;
 
-    private String roomid;
+    private String roomId;
 }

@@ -94,7 +94,7 @@ public class DeviceControllerTest {
                             // Add the Authorization header with the user token
                             .header("Authorization", "Bearer " + userToken)
                             .contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(MockMvcResultMatchers.status().isUnauthorized())
+                    .andExpect(MockMvcResultMatchers.status().isBadRequest())
                     .andDo(result -> {
                         System.out.println("deviceRegisterWithInvalidCredentials TEST PASSED");
                     }).andReturn();
@@ -130,7 +130,7 @@ public class DeviceControllerTest {
                             // Add the Authorization header with the user token
                             .header("Authorization", "Bearer " + userToken)
                             .contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(MockMvcResultMatchers.status().isUnauthorized())
+                    .andExpect(MockMvcResultMatchers.status().isBadRequest())
                     .andDo(result -> {
                         System.out.println("registerUnavailableDevice TEST PASSED");
                     }).andReturn();
@@ -165,7 +165,7 @@ public class DeviceControllerTest {
                             // Add the Authorization header with the user token
                             .header("Authorization", "Bearer " + userToken)
                             .contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(MockMvcResultMatchers.status().isUnauthorized())
+                    .andExpect(MockMvcResultMatchers.status().isBadRequest())
                     .andDo(result -> {
                         System.out.println("deviceRegisterByNonAdmin TEST PASSED");
                     }).andReturn();

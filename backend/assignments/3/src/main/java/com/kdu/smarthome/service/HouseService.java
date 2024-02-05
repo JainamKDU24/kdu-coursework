@@ -131,19 +131,20 @@ public class HouseService {
      * Updates the address of a house.
      *
      * @param houseId    The ID of the house to update.
-     * @param houseDTO   The DTO containing the updated address information.
+     * @param updateAddressDTO  The DTO containing the updated address information.
      * @param token      The authentication token.
      * @return A DTO containing details of the updated house address.
      * @throws NotFound        If the user, house, or house user is not found.
      * @throws NotPermitted    If the user is not the admin of the house.
      * @throws InvalidRequest  If an error occurs during the house update process.
      */
-    public ApiResponseDTO updateHouseAddress(String houseId, UpdateAddressDTO houseDTO, String token) {
+    public ApiResponseDTO updateHouseAddress(String houseId, UpdateAddressDTO updateAddressDTO, String token) {
         User user = userRepo.findById(jwtSecurityProviderService.extractUsername(token.substring(7)))
                 .orElseThrow(() -> new NotFound("User with username does not exist."));
 
         House house = houseRepo.findById(houseId).orElseThrow(() ->
                 new NotFound("House with ID " + houseId + " does not exist."));
+        System.out.println("done");
 
         HouseUser houseUser = houseUserRepo.findByHouseIdAndUsername(houseId, user.getUsername());
         if (Objects.isNull(houseUser)) {
@@ -151,7 +152,7 @@ public class HouseService {
         }
 
         try {
-            house.setAddress(houseDTO.getAddress());
+            house.setAddress(updateAddressDTO.getAddress());
             House updatedHouse = houseRepo.save(house);
             return HouseUtil.requesttoResponse("House address updated successfully.", updatedHouse, HttpStatus.OK);
         } catch (Exception e) {
@@ -177,7 +178,9 @@ public class HouseService {
             List<Device> deviceList = deviceRepo.findByHouse_Id(houseId);
             List<Object> houseList = new ArrayList<>();
             houseList.addAll(roomList);
+            System.out.println(deviceList);
             houseList.addAll(deviceList);
+            System.out.println(houseList);
             return HouseUtil.reponseForHouseDetails(houseList,"House details fetched successfully",HttpStatus.OK);
         }
         catch (NotFound e) {

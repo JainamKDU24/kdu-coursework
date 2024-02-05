@@ -57,12 +57,12 @@ public class DeviceService {
                 Device savedDevice = deviceRepo.save(DeviceUtil.dtotoEntity(registerDeviceDTO));
                 return DeviceUtil.requesttoResponse("Device registered successfully", savedDevice, HttpStatus.OK);
             } else {
-                throw new NotPermitted("Invalid credentials. Please check again", HttpStatus.BAD_REQUEST);
+                throw new InvalidRequest("Invalid credentials. Please check again");
             }
         } catch (NotFound e) {
             throw new NotFound("Device registration not possible. " + e.getMessage());
-        } catch (NotPermitted e) {
-            throw new NotPermitted("Device cannot be registered. " + e.getMessage(), HttpStatus.BAD_REQUEST);
+        } catch (InvalidRequest e) {
+            throw new InvalidRequest("Device cannot be registered. " + e.getMessage());
         } catch (Exception e) {
             throw new NotPermitted("Device registration not permitted");
         }
@@ -95,10 +95,10 @@ public class DeviceService {
                     new NotFound("Device with ID " + addDeviceDTO.getKickstonId() + " does not exist."));
 
             // Ensure house and room exist before assigning
-            House house = houseRepo.findById(addDeviceDTO.getHouseid()).orElseThrow(() ->
-                    new NotFound("House with ID " + addDeviceDTO.getHouseid() + " does not exist."));
-            Room room = roomRepo.findById(addDeviceDTO.getRoomid()).orElseThrow(() ->
-                    new NotFound("Room with ID " + addDeviceDTO.getRoomid() + " does not exist."));
+            House house = houseRepo.findById(addDeviceDTO.getHouseId()).orElseThrow(() ->
+                    new NotFound("House with ID " + addDeviceDTO.getHouseId() + " does not exist."));
+            Room room = roomRepo.findById(addDeviceDTO.getRoomId()).orElseThrow(() ->
+                    new NotFound("Room with ID " + addDeviceDTO.getRoomId() + " does not exist."));
 
             device.setHouse(house);
             device.setRoom(room);

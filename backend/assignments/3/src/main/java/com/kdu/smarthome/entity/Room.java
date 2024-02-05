@@ -28,4 +28,13 @@ public class Room extends CommonTags {
     @ManyToOne
     @JoinColumn(name = "house_id")
     private House house;
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "roomId='" + roomId + '\'' +
+                ", room_name='" + room_name + '\'' +
+                ", house=" + house +
+                '}';
+    }
 }
