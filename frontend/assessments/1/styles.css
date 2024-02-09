@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  background-color: rgb(255, 165, 165);
+}
+
+header {
+  margin-top: 0rem;
+  font-family: Poppins;
+  margin: 4rem;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+}
+header .nav {
+  font-family: Poppins;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  align-items: baseline;
+}
+header .nav .t1 {
+  display: grid;
+  font-size: 1rem;
+}
+header .nav .tags {
+  margin-left: 16rem;
+  align-items: end;
+  display: grid;
+  font-weight: bold;
+  justify-content: space-evenly;
+}
+
+.Coffee-app {
+  font-family: Poppins;
+  margin: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media only screen and (max-width: 767px) {
+  .Coffee-app header {
+    margin: 0rem;
+  }
+  .Coffee-app .Coffee-app {
+    margin: 0rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .Coffee-app header {
+    margin: 0rem;
+  }
+  .Coffee-app .Coffee-app {
+    margin: 0rem;
+  }
+}
+.Coffee-app .content {
+  color: white;
+  display: grid;
+}
+.Coffee-app .content .details {
+  font-family: Poppins;
+  font-size: 5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+.Coffee-app .content .byline {
+  font-size: 1rem;
+  margin-top: 0px;
+  font-weight: bold;
+}
+.Coffee-app .content .get-started {
+  padding: 20px;
+  border-radius: 8px;
+  width: 120px;
+  height: 20px;
+  background-color: #be5569;
+  text-align: center;
+  font-weight: bold;
+}
+.Coffee-app .image {
+  display: grid;
+  align-self: center;
+  justify-content: left;
+}/*# sourceMappingURL=styles.css.map */

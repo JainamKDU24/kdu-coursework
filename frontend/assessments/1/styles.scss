@@ -1,0 +1,88 @@
+*{
+    background-color:rgb(255 165 165)
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+header {
+    margin-top: 0rem;
+    font-family: Poppins;
+    margin: 4rem;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+
+    .nav {
+        font-family: Poppins;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        align-items: baseline;
+        .t1{
+            display: grid;
+            font-size: 1rem;
+
+        }
+        .tags {
+            margin-left: 16rem;
+            align-items: end;
+            display: grid;
+            font-weight: bold;
+            justify-content: space-evenly;
+        }
+    }
+}
+.Coffee-app{
+    @media only screen and (max-width: 767px) {
+        header{
+            margin: 0rem;
+        }
+        .Coffee-app{
+            margin: 0rem;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        header{
+            margin: 0rem;
+        }
+        .Coffee-app{
+            margin: 0rem;
+        }
+    }
+    font-family: Poppins;
+    margin: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .content{
+        color: white;
+        display: grid;
+        .details{
+            font-family: Poppins;
+            font-size: 5rem;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+        }
+        .byline{
+            font-size: 1rem;
+            margin-top: 0px;
+            font-weight: bold;
+        }
+        .get-started{
+            padding: 20px;
+            border-radius: 8px;
+            width: 120px;
+            height: 20px;
+            background-color:#be5569;
+            text-align: center;
+            font-weight: bold;
+        }
+
+    }
+    .image{
+        display: grid;
+        align-self: center;
+        justify-content: left;
+    }
+
+
+}
+
