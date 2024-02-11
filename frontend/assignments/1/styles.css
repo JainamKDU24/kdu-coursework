@@ -1,0 +1,590 @@
+/* Variables */
+/* Equivalent to 1079px */
+/* Equivalent to 726px */
+/* Equivalent to 414px */
+/* Equivalent to 896px */
+/* Reduced from 17.25rem to make the navbar smaller */
+/* Equivalent to 240px */
+/* Equivalent to 70px */
+/* Equivalent to 35px */
+/* Equivalent to 28px */
+/* Common styles for both views */
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Desktop View */
+@media (min-width: 1079px) and (min-height: 726px) {
+  .mobile-app {
+    display: none;
+  }
+  .desktop-app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .desktop-app .left {
+    /* Add the new styles here */
+  }
+  .desktop-app .left .navigation-section {
+    display: grid;
+    margin-left: 5rem;
+    position: fixed;
+    width: 16.25rem;
+    height: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.2rem;
+    left: 0;
+    top: 0;
+    grid-template-rows: auto repeat(12, 0.9fr) 0.7fr 1fr;
+    padding-top: 0.625rem;
+  }
+  .desktop-app .left .navigation-section .main-logo {
+    margin-left: 1.1rem;
+    margin-right: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .desktop-app .left .navigation-section .nav-logo,
+  .desktop-app .left .navigation-section .messages-logo,
+  .desktop-app .left .navigation-section .grok-logo,
+  .desktop-app .left .navigation-section .explore-logo,
+  .desktop-app .left .navigation-section .notifications-logo,
+  .desktop-app .left .navigation-section .lists-logo,
+  .desktop-app .left .navigation-section .bookmarks-logo,
+  .desktop-app .left .navigation-section .communities-logo,
+  .desktop-app .left .navigation-section .premium-logo,
+  .desktop-app .left .navigation-section .profile-logo,
+  .desktop-app .left .navigation-section .more-logo {
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .desktop-app .left .navigation-section .nav-item {
+    width: 16.25rem;
+    margin-bottom: 0rem;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .desktop-app .left .navigation-section .nav-item:hover {
+    background-color: #1da1f2;
+    font-weight: bold;
+  }
+  .desktop-app .left .navigation-section .nav-item.active {
+    background-color: #1da1f2;
+    font-weight: bold;
+  }
+  .desktop-app .left .grid-container {
+    display: grid;
+    width: -moz-max-content;
+    width: max-content;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+  }
+  .desktop-app .left .grid-item {
+    align-items: center;
+  }
+  .desktop-app .left .grid-item .user-image {
+    margin-left: 1.4rem;
+    width: 2m;
+    height: 2rem;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    align-self: center;
+  }
+  .desktop-app .left .grid-item2 {
+    margin-top: 0.25rem;
+    align-items: center;
+  }
+  .desktop-app .left .grid-item2 .user-info {
+    display: flex;
+  }
+  .desktop-app .left .grid-item2 .user-info .user {
+    font-size: 1rem;
+    color: white;
+  }
+  .desktop-app .left .grid-item2 .user-info .user-username {
+    font-size: 0.75rem;
+    color: grey;
+  }
+  .desktop-app .left .grid-item2 .user-info .post-three-dot-option {
+    margin-left: 3rem;
+    height: 1.5rem;
+  }
+  .desktop-app .left .grid-item2 .user-info .post-three-dot-option .logo {
+    width: 1.5rem;
+  }
+  .desktop-app .left .post-button {
+    position: relative;
+    margin: 2rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-weight: bold;
+    background-color: #1da1f2;
+    color: #ffffff;
+    width: 13rem;
+    height: 3.125rem;
+    border: none;
+    border-radius: 1.6rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    outline: none;
+  }
+  .desktop-app .left .post-button:hover {
+    background-color: #2290d4;
+  }
+  .desktop-app .tweet-box {
+    margin-left: 21rem;
+    display: flex;
+    border-bottom: 1px #2f3336 solid;
+  }
+  .desktop-app .tweet-box .profile-icon {
+    padding: 0.6rem 0 0 0.6rem;
+  }
+  .desktop-app .tweet-box .profile-icon img {
+    width: 2.2rem;
+    border-radius: 50%;
+  }
+  .desktop-app .tweet-box .post-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .desktop-app .tweet-box .post-input-container .post-text {
+    margin: 1.1rem 0.8rem 0 0.8rem;
+  }
+  .desktop-app .tweet-box .post-input-container .post-text .post-input {
+    background-color: black;
+    color: lightgray;
+    border: none;
+    font-size: 1.2rem;
+  }
+  .desktop-app .tweet-box .post-input-container .post-icons-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+  .desktop-app .tweet-box .post-input-container .post-icons-container .post-icons {
+    width: 90%;
+    margin: 1.5rem 0 0 0.5rem;
+  }
+  .desktop-app .tweet-box .post-input-container .post-icons-container .post-icons .logo {
+    width: 1.5rem;
+    margin: 0.3rem;
+  }
+  .desktop-app .tweet-box .post-input-container .post-icons-container .post-icons .location-logo {
+    opacity: 0.5;
+  }
+  .desktop-app .tweet-box .post-input-container .post-icons-container .post-btn-container {
+    width: 30%;
+    margin-top: 1.3rem;
+    display: flex;
+    align-items: center;
+  }
+  .desktop-app .tweet-box .post-input-container .post-icons-container .post-btn-container .post-btn {
+    width: 60%;
+    background-color: #1d9bf0;
+    color: white;
+    padding: 0.5rem 0.3rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    opacity: 0.5;
+  }
+  .desktop-app .posts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 21rem;
+  }
+  .desktop-app .posts .post {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px #2f3336 solid;
+  }
+  .desktop-app .posts .post .profile-icon {
+    display: flex;
+    padding: 0.6rem 0 0 0.6rem;
+    margin-right: 0.8rem;
+  }
+  .desktop-app .posts .post .profile-icon img {
+    height: 2.2rem;
+    width: 2.2rem;
+    border-radius: 50%;
+  }
+  .desktop-app .posts .post .content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.7rem;
+    width: 100%;
+  }
+  .desktop-app .posts .post .content .post-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .desktop-app .posts .post .content .post-info .post-profile-info .post-user {
+    font-weight: bold;
+  }
+  .desktop-app .posts .post .content .post-info .post-profile-info .post-username {
+    font-weight: lighter;
+    color: #4a4d50;
+  }
+  .desktop-app .posts .post .content .post-info .post-three-dot-option {
+    height: 1.5rem;
+  }
+  .desktop-app .posts .post .content .post-info .post-three-dot-option .logo {
+    width: 1.5rem;
+  }
+  .desktop-app .posts .post .content .post-caption {
+    overflow-wrap: break-word;
+  }
+  .desktop-app .posts .post .content .post-caption .post-hashtag {
+    color: #1d9bf0;
+  }
+  .desktop-app .posts .post .content .post-icons {
+    display: flex;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .desktop-app .posts .post .content .post-icons .icon {
+    margin-right: 5.65rem;
+  }
+  .desktop-app .posts .post .content .post-icons .icon .logo {
+    width: 1.5rem;
+  }
+  .desktop-app .posts .post .content .post-icons .last-icon {
+    margin-right: 1rem;
+  }
+}
+@media (max-width: 1075px) {
+  .desktop-app {
+    display: none;
+  }
+  .mobile-app .navigation-section {
+    display: none;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.5rem;
+    left: 0;
+    top: 0;
+    grid-template-rows: auto repeat(12, 0.9fr) 0.7fr 1fr;
+    padding-top: 0.625rem;
+  }
+  .mobile-app .navigation-section .main-logo {
+    margin-left: 12rem;
+    margin-right: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .mobile-app .navigation-section .nav-logo {
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .mobile-app .navigation-section .nav-item {
+    margin-bottom: 0%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .mobile-app .navigation-section .nav-item:hover {
+    background-color: #1da1f2;
+    font-weight: bold;
+  }
+  .mobile-app .navigation-section .nav-item.active {
+    background-color: #1da1f2;
+    font-weight: bold;
+  }
+  .mobile-app .navigation-section .grid-container {
+    display: flex;
+    width: -moz-max-content;
+    width: max-content;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mobile-app .navigation-section .grid-item {
+    align-items: center;
+  }
+  .mobile-app .navigation-section .grid-item .user-image {
+    margin-left: 16px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+    align-self: center;
+  }
+  .mobile-app .navigation-section .grid-item2 {
+    align-items: center;
+  }
+  .mobile-app .navigation-section .grid-item2 .user-info {
+    display: flex;
+  }
+  .mobile-app .navigation-section .grid-item2 .user-info .user {
+    margin-left: 16px;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .mobile-app .navigation-section .grid-item2 .user-info .user-username {
+    font-weight: lighter;
+    font-size: 1.25rem;
+    color: grey;
+  }
+  .mobile-app .navigation-section .grid-item2 .user-info .followers,
+  .mobile-app .navigation-section .grid-item2 .user-info .following {
+    font-size: 1.1rem;
+    font-weight: lighter;
+    color: gray;
+  }
+  .mobile-app .navigation-section .grid-item2 .user-info .followers .num,
+  .mobile-app .navigation-section .grid-item2 .user-info .following .num {
+    color: white;
+  }
+  .mobile-app .container-2 {
+    width: 100%;
+  }
+  .mobile-app .container-2 .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-app .container-2 .header .profile-img {
+    padding: 0.6rem 0 0 0.6rem;
+  }
+  .mobile-app .container-2 .header .profile-img img {
+    width: 2.2rem;
+    border-radius: 50%;
+  }
+  .mobile-app .container-2 .header .logo-container {
+    padding: 0.6rem 0 0 0.6rem;
+  }
+  .mobile-app .container-2 .header .logo-container .logo {
+    width: 1.5rem;
+    margin-right: 1rem;
+  }
+  .mobile-app .container-2 .header .settings {
+    padding: 0.6rem 0.6rem 0 0;
+  }
+  .mobile-app .container-2 .header .settings .settings-icon {
+    width: 1.5rem;
+  }
+  .mobile-app .container-2 .post {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px #2f3336 solid;
+  }
+  .mobile-app .container-2 .post .profile-icon {
+    display: flex;
+    padding: 0.6rem 0 0 0.6rem;
+    margin-right: 0.8rem;
+  }
+  .mobile-app .container-2 .post .profile-icon img {
+    height: 2.2rem;
+    width: 2.2rem;
+    border-radius: 50%;
+  }
+  .mobile-app .container-2 .post .content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.4rem;
+  }
+  .mobile-app .container-2 .post .content .post-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-app .container-2 .post .content .post-info .post-profile-info .post-user {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .mobile-app .container-2 .post .content .post-info .post-profile-info .post-username {
+    font-size: 1rem;
+    font-weight: lighter;
+    color: #4a4d50;
+  }
+  .mobile-app .container-2 .post .content .post-info .post-three-dot-option {
+    height: 1.5rem;
+  }
+  .mobile-app .container-2 .post .content .post-info .post-three-dot-option .logo {
+    width: 1.5rem;
+  }
+  .mobile-app .container-2 .post .content .post-caption {
+    overflow-wrap: break-word;
+    font-size: 1rem;
+  }
+  .mobile-app .container-2 .post .content .post-caption .post-hashtag {
+    color: #1d9bf0;
+  }
+  .mobile-app .container-2 .post .content .post-icons {
+    display: flex;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .mobile-app .container-2 .post .content .post-icons .icon .logo {
+    width: 1.5rem;
+  }
+  .mobile-app .container-2 .post .content .post-icons .last-icon {
+    margin-right: 1rem;
+  }
+  .mobile-app .container-2 .posts .post .content {
+    width: 80%;
+  }
+  .mobile-app .container-2 .posts .post .content .post-icons .icon {
+    margin-right: 2.65rem;
+  }
+  .mobile-app .container-2 .posts .post .content .post-icons .last-icon {
+    margin-right: 1rem;
+  }
+  .mobile-app .container-2 .floating-btn-container {
+    display: initial;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .mobile-app .container-2 .floating-btn-container .floating-tweet-box-icon {
+    width: 4rem;
+    height: 4rem;
+    background-color: #1d9bf0;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+  }
+  .mobile-app .mobile-post {
+    display: none;
+  }
+  .mobile-app .tweet-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .mobile-app .tweet-box .header-container .header {
+    height: 53px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 14px;
+  }
+  .mobile-app .tweet-box .header-container .header .back-container {
+    height: 20px;
+  }
+  .mobile-app .tweet-box .header-container .header .back-container .icon {
+    width: 20px;
+    fill: white;
+  }
+  .mobile-app .tweet-box .header-container .header .post-btn-container {
+    display: flex;
+    width: 153.11px;
+  }
+  .mobile-app .tweet-box .header-container .header .post-btn-container .draft {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1d9bf0;
+  }
+  .mobile-app .tweet-box .header-container .header .post-btn-container .tweet-btn-container {
+    padding-left: 13px;
+  }
+  .mobile-app .tweet-box .header-container .header .post-btn-container .tweet-btn-container #tweet-btn {
+    width: 64.56px;
+    height: 32px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: #1d9bf0;
+    border: none;
+    border-radius: 9999px;
+    opacity: 0.5;
+  }
+  .mobile-app .tweet-box .input-container {
+    height: 128px;
+  }
+  .mobile-app .tweet-box .input-container .input {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-app .tweet-box .input-container .input .img-text {
+    display: flex;
+    height: 128px;
+  }
+  .mobile-app .tweet-box .input-container .input .img-text .img {
+    margin-right: 12px;
+    padding-top: 12px;
+  }
+  .mobile-app .tweet-box .input-container .input .img-text .img img {
+    width: 40px;
+    border-radius: 50%;
+  }
+  .mobile-app .tweet-box .input-container .input .img-text .text {
+    padding: 18px 2px 14px 2px;
+  }
+  .mobile-app .tweet-box .input-container .input .img-text .text .post-input-container {
+    height: 96px;
+    width: 326px;
+  }
+  .mobile-app .tweet-box .input-container .input .img-text .text .post-input-container .post-input {
+    background-color: black;
+    width: 100%;
+    color: #45484b;
+    border: none;
+    font-size: 20px;
+  }
+  .mobile-app .tweet-box .icons-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 8px 16px;
+    height: 93px;
+  }
+  .mobile-app .tweet-box .icons-container .reply-container {
+    height: 37px;
+    border-bottom: 1px #2f3336 solid;
+  }
+  .mobile-app .tweet-box .icons-container .reply-container .reply {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    height: 22px;
+    font-weight: bold;
+    margin-bottom: 13px;
+    color: #1d9bf0;
+    padding: 0 4px;
+  }
+  .mobile-app .tweet-box .icons-container .reply-container .reply .icon {
+    width: 16px;
+    height: 16px;
+    fill: #1d9bf0;
+    margin-right: 4px;
+  }
+  .mobile-app .tweet-box .icons-container .icons {
+    display: flex;
+    align-items: center;
+    height: 61.7px;
+    margin-top: 8px;
+  }
+  .mobile-app .tweet-box .icons-container .icons .icon .logo {
+    width: 20px;
+    margin-right: 16px;
+    margin-top: 5px;
+  }
+  .mobile-app .tweet-box .icons-container .icons .icon #like-post {
+    border: none;
+  }
+  .mobile-app .tweet-box .icons-container .icons .icon #like-post .logo {
+    fill: #f91880;
+  }
+  .mobile-app .tweet-box .icons-container .icons .icon .location-logo {
+    opacity: 0.5;
+  }
+}/*# sourceMappingURL=styles.css.map */
