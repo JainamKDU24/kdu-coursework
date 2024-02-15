@@ -149,7 +149,32 @@ var RecipeFunctionality = /** @class */ (function () {
     };
     return RecipeFunctionality;
 }());
+// HTML elements
+var searchInput = document.getElementById('searchInput');
+var recipesContainer = document.getElementById('recipesContainer');
+// Function to display recipes
+function displayRecipes(recipes) {
+    recipesContainer.innerHTML = '';
+    recipes.forEach(function (recipe) {
+        var recipeBox = document.createElement('div');
+        recipeBox.classList.add('recipe-box');
+        recipeBox.innerHTML = "\n            <h2>".concat(recipe.name, "</h2>\n            <p>Rating: ").concat(recipe.rating, "</p>\n            <p>Cuisine: ").concat(recipe.cuisine, "</p>\n            <p>Difficulty: ").concat(recipe.difficulty, "</p>\n            <p>Ingredients: ").concat(recipe.ingredients.join(', '), "</p>\n            <p>Time Taken: ").concat(recipe.timeTaken, "</p>\n            <p>Calorie Count: ").concat(recipe.calorieCount, "</p>\n            <img src=\"").concat(recipe.image, "\" alt=\"").concat(recipe.name, "\">\n        ");
+        recipesContainer.appendChild(recipeBox);
+    });
+}
+// Function to filter recipes based on search query
+function filterRecipes(query) {
+    recipeFunctionality.searchRecipes(query)
+        .then(function (recipes) { return displayRecipes(recipes); })
+        .catch(function (error) { return console.error('Error searching recipes:', error); });
+}
+// Event listener for search input
+searchInput.addEventListener('input', function () {
+    filterRecipes(this.value);
+});
+// Create an instance of RecipeFunctionality
 var recipeFunctionality = new RecipeFunctionality();
+// Fetch recipes from API and display them initially
 recipeFunctionality.fetchRecipesFromAPI()
-    .then(function () { recipeFunctionality.printAllRecipes(); });
-recipeFunctionality.searchRecipes("Pizza");
+    .then(function (recipes) { return displayRecipes(recipes); })
+    .catch(function (error) { return console.error('Error fetching recipes:', error); });

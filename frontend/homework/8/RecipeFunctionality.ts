@@ -8,6 +8,7 @@ interface IRecipe {
     timeTaken: number; 
     calorieCount: number; 
 }
+
 class Recipe implements IRecipe {
     constructor(
         public image: string,
@@ -20,6 +21,7 @@ class Recipe implements IRecipe {
         public calorieCount: number
     ) {}
 }
+
 interface IRawResponse {
     id: number;
     name: string;
@@ -38,6 +40,7 @@ interface IRawResponse {
     reviewCount: number;
     mealType: string[];
 }
+
 class RawResponse implements IRawResponse {
     constructor(
         public id: number,
@@ -59,7 +62,7 @@ class RawResponse implements IRawResponse {
     ) {}
 }
 
-class RecipeFunctionality{
+class RecipeFunctionality {
     private recipes: Recipe[] = [];
     public fetchUrl: string = 'https://dummyjson.com/recipes';
     public searchUrl: string = 'https://dummyjson.com/recipes/search?q=';
@@ -110,12 +113,48 @@ class RecipeFunctionality{
             console.error('Error printing all recipes:', error);
         }
     }        
-    
 }
 
+// HTML elements
+const searchInput = document.getElementById('searchInput');
+const recipesContainer = document.getElementById('recipesContainer');
+
+// Function to display recipes
+function displayRecipes(recipes) {
+    recipesContainer.innerHTML = '';
+    recipes.forEach(recipe => {
+        const recipeBox = document.createElement('div');
+        recipeBox.classList.add('recipe-box');
+        recipeBox.innerHTML = `
+            <h2>${recipe.name}</h2>
+            <p>Rating: ${recipe.rating}</p>
+            <p>Cuisine: ${recipe.cuisine}</p>
+            <p>Difficulty: ${recipe.difficulty}</p>
+            <p>Ingredients: ${recipe.ingredients.join(', ')}</p>
+            <p>Time Taken: ${recipe.timeTaken}</p>
+            <p>Calorie Count: ${recipe.calorieCount}</p>
+            <img src="${recipe.image}" alt="${recipe.name}">
+        `;
+        recipesContainer.appendChild(recipeBox);
+    });
+}
+
+// Function to filter recipes based on search query
+function filterRecipes(query) {
+    recipeFunctionality.searchRecipes(query)
+        .then(recipes => displayRecipes(recipes))
+        .catch(error => console.error('Error searching recipes:', error));
+}
+
+// Event listener for search input
+searchInput.addEventListener('input', function() {
+    filterRecipes(this.value);
+});
+
+// Create an instance of RecipeFunctionality
 const recipeFunctionality = new RecipeFunctionality();
+
+// Fetch recipes from API and display them initially
 recipeFunctionality.fetchRecipesFromAPI()
-    .then(()=>{recipeFunctionality.printAllRecipes();});
-
-recipeFunctionality.searchRecipes("Pizza");
-
+    .then(recipes => displayRecipes(recipes))
+    .catch(error => console.error('Error fetching recipes:', error));
