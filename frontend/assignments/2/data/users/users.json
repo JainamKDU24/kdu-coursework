@@ -1,0 +1,27 @@
+[
+    {
+      "id": "1",
+      "name": "Nitesh Gupta",
+      "user_name": "nitesh",
+      "user_email_id": "nitesh.gupta@twitter.com",
+      "password": "admin",
+      "profile_url": "images/profilepic/1.png"
+    },
+    {
+      "id": "2",
+      "name": "Jainam Gandhi",
+      "user_name": "jainam",
+      "user_email_id": "jainam.gandhi@twitter.com",
+      "password": "admin",
+      "profile_url": "images/profilepic/2.png"
+    },
+    {
+      "id": "3",
+      "name": "Sagun Sangwan",
+      "user_name": "sagun",
+      "user_email_id": "sagun.sangwan@twitter.com",
+      "password": "admin",
+      "profile_url": "images/profilepic/3.png"
+    }
+]
+  
