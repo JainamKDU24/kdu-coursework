@@ -1,0 +1,51 @@
+.UserDisplay{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffec99;
+    .name{
+        padding-top: 100px;
+        padding-left: 10px;
+        font-size: 60px;
+        font-weight: bold;
+    }
+    .fullName{
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .qualification{
+        padding: 10px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .skills-hobbies {      
+        display: flex;
+        justify-content: space-evenly;
+        height: 60%;
+        width: 100%; 
+      }
+      
+      .skills-container,
+      .hobbies-container {  
+        font-size: 40px;
+        margin-left: 10px; 
+        border: 1px black solid;
+        padding: 10px;   
+        flex: 1;
+        margin-right: 10px; 
+      }
+      .skills-container{
+        background-color: #a5d8ff;
+      }
+      .hobbies-container{
+        background-color: #d2f2bb;
+      }
+      .title{
+        text-align: center;
+      }
+      li{
+        list-style-type: none;
+      }
+
+}
