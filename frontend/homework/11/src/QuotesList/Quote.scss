@@ -1,0 +1,42 @@
+.content{
+    margin-top:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .quote-item{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        background-color: #0C359E;
+        color: #F6F5F5;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 25px;
+        .author,
+        .dateAdded {
+            align-self: flex-end;
+            padding-right: 2%;
+            margin-top: 0%;
+            margin-bottom: 5px;
+        }
+        .author{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .tags{
+            display: flex;
+            .tag-btn{
+                margin: 1.5%;
+                margin-top: 0%;
+                height: 40px;
+                width: fit-content;
+                border: none;
+                border-radius: 15px;
+                background-color: #EE99C2;
+                font-weight: bold;
+            }
+        }
+    }
+
+}

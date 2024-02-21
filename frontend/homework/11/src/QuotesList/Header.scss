@@ -1,0 +1,40 @@
+.Header{
+    width: 50%;
+    margin: auto;
+    border-bottom:1px solid grey ;
+    align-items: center;
+    .fetch-quote{
+        display: flex;
+        background-color: #FFE3CA;
+        color:#0C359E;
+        border: none;
+        font-weight: bold;
+        font-size: 18px;
+        width: fit-content;
+        height: 60px;
+        span{
+            align-self:center ;
+        }
+    }
+    .filter{
+        margin-top:4%;
+        margin-bottom:4%;
+        font-weight: bold;
+        font-size: 18px;
+        .tag{
+            padding: 10px 15px ;
+            height: 40px;
+            width: fit-content;
+            border: none;
+            border-radius: 15px;
+            background-color: #EE99C2;
+            font-weight: bold;
+            .cancel{
+                border: none;
+                background-color: transparent;
+                color: red;
+            }
+        }
+    }
+    
+}
