@@ -1,0 +1,82 @@
+-- Create table for users
+CREATE TABLE users (
+    username VARCHAR(255) PRIMARY KEY,
+    password VARCHAR(255),
+    name VARCHAR(255),
+    firstName VARCHAR(255),
+    lastName VARCHAR(255),
+    emailId VARCHAR(255),
+    createdDate TIMESTAMP,
+    modifiedDate TIMESTAMP,
+    deletedDate TIMESTAMP,
+    isDeleted BOOLEAN NOT NULL,
+    CONSTRAINT users_pk PRIMARY KEY (username)
+);
+
+-- Create table for common tags
+CREATE TABLE common_tags (
+    createdDate TIMESTAMP,
+    modifiedDate TIMESTAMP,
+    deletedDate TIMESTAMP,
+    isDeleted BOOLEAN NOT NULL
+);
+
+-- Create table for house
+CREATE TABLE houses (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    address VARCHAR(255),
+    house_name VARCHAR(255),
+    createdDate TIMESTAMP,
+    modifiedDate TIMESTAMP,
+    deletedDate TIMESTAMP,
+    isDeleted BOOLEAN NOT NULL
+);
+
+-- Create table for house users
+CREATE TABLE house_users (
+    houseUserId UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    house_id UUID REFERENCES houses(id),
+    user_id VARCHAR(255) REFERENCES users(username),
+    role VARCHAR(255),
+    createdDate TIMESTAMP,
+    modifiedDate TIMESTAMP,
+    deletedDate TIMESTAMP,
+    isDeleted BOOLEAN NOT NULL
+);
+
+-- Create table for rooms
+CREATE TABLE rooms (
+    roomId UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    room_name VARCHAR(255),
+    house_id UUID REFERENCES houses(id),
+    createdDate TIMESTAMP,
+    modifiedDate TIMESTAMP,
+    deletedDate TIMESTAMP,
+    isDeleted BOOLEAN NOT NULL
+);
+
+-- Create table for devices
+CREATE TABLE devices (
+    kickstonid VARCHAR(6) PRIMARY KEY,
+    deviceusername VARCHAR(255),
+    devicepassword VARCHAR(255),
+    room_id UUID REFERENCES rooms(roomId),
+    house_id UUID REFERENCES houses(id),
+    createdDate TIMESTAMP,
+    modifiedDate TIMESTAMP,
+    deletedDate TIMESTAMP,
+    isDeleted BOOLEAN NOT NULL
+);
+
+-- Create table for inventories
+CREATE TABLE inventories (
+    kickstonid VARCHAR(6) PRIMARY KEY,
+    deviceusername VARCHAR(255),
+    devicepassword VARCHAR(255),
+    manufacturedatetime VARCHAR(255),
+    manufacturefactoryplace VARCHAR(255),
+    createdDate TIMESTAMP,
+    modifiedDate TIMESTAMP,
+    deletedDate TIMESTAMP,
+    isDeleted BOOLEAN NOT NULL
+);
