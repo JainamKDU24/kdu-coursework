@@ -1,0 +1,873 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  max-width: 100%;
+}
+.container .navigation-section {
+  width: 295px;
+  height: 801px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+}
+.container .navigation-section .mobile-nav-container {
+  display: none;
+}
+.container .navigation-section .desktop-nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 27px;
+  width: 295px;
+  height: 801px;
+}
+.container .navigation-section .desktop-nav-container .main-container .logo-container {
+  display: flex;
+  align-items: center;
+  width: 52px;
+  height: 56px;
+  padding: 2px 0;
+  margin-left: 12px;
+}
+.container .navigation-section .desktop-nav-container .main-container .logo-container .logo {
+  justify-self: center;
+  width: 30px;
+}
+.container .navigation-section .desktop-nav-container .main-container .nav-items {
+  width: 259px;
+  height: 552.75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+.container .navigation-section .desktop-nav-container .main-container .nav-items .nav-item {
+  display: flex;
+  width: 259px;
+  height: 50.25px;
+  align-items: center;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+.container .navigation-section .desktop-nav-container .main-container .nav-items .nav-item .item {
+  padding: 12px;
+  display: flex;
+  align-items: flex-end;
+}
+.container .navigation-section .desktop-nav-container .main-container .nav-items .nav-item .item .logo {
+  width: 26.25px;
+}
+.container .navigation-section .desktop-nav-container .main-container .nav-items .nav-item .item span {
+  font-size: 20px;
+  margin-left: 20px;
+}
+.container .navigation-section .desktop-nav-container .main-container .post-btn-container {
+  margin: 4px 0;
+}
+.container .navigation-section .desktop-nav-container .main-container .post-btn-container .post-btn {
+  width: 233.09px;
+  height: 50px;
+  background-color: #1d9bf0;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 2rem;
+  font-size: 17px;
+}
+.container .navigation-section .desktop-nav-container .profile-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+.container .navigation-section .desktop-nav-container .profile-container .profile {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+.container .navigation-section .desktop-nav-container .profile-container .profile .profile-img img {
+  width: 40px;
+  border-radius: 50%;
+}
+.container .navigation-section .desktop-nav-container .profile-container .profile .profile-info {
+  margin: 0 12px;
+}
+.container .navigation-section .desktop-nav-container .profile-container .profile .profile-info .profile-name {
+  font-size: 15px;
+  font-weight: bold;
+}
+.container .navigation-section .desktop-nav-container .profile-container .profile .profile-info .profile-username {
+  font-size: 15px;
+  color: #4a4d50;
+}
+.container .navigation-section .desktop-nav-container .profile-container .profile-options {
+  display: flex;
+  align-items: center;
+}
+.container .navigation-section .desktop-nav-container .profile-container .profile-options .logo {
+  width: 18.75px;
+  height: 18.75px;
+  fill: white;
+}
+.container .container-2 {
+  display: flex;
+  flex-direction: column;
+  width: 585px;
+  height: 100vh;
+  border-left: 1px #2f3336 solid;
+  border-right: 1px #2f3336 solid;
+  overflow-y: scroll;
+}
+.container .container-2 .header {
+  display: none;
+}
+.container .container-2 .top-container {
+  display: flex;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-bottom: 1px #2f3336 solid;
+}
+.container .container-2 .top-container .for-you {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding: 1rem;
+  position: relative;
+}
+.container .container-2 .top-container .for-you div {
+  width: 60px;
+  height: 5px;
+  background-color: #1d9bf0;
+  position: absolute;
+  bottom: 0;
+  border-radius: 3px;
+  margin: 2px;
+}
+.container .container-2 .top-container .following {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding: 1rem;
+}
+.container .container-2 .top-container .settings {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.container .container-2 .top-container .settings .settings-icon {
+  width: 1.2rem;
+}
+.container .container-2 .tweet-box .desktop-tweet-box {
+  padding: 4px 16px;
+  border-bottom: 1px #2f3336 solid;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container {
+  display: flex;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .profile-img {
+  padding-top: 12px;
+  margin-right: 12px;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .profile-img img {
+  width: 40px;
+  border-radius: 50%;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+  width: 495px;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-text {
+  height: 120px;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-text .post-input {
+  width: 100%;
+  padding: 12px 0;
+  background-color: black;
+  color: #45484b;
+  border: none;
+  font-size: 20px;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-text .post-input:focus {
+  outline: none;
+  color: white;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .file-upload-container {
+  display: none;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .file-upload-container img {
+  width: 200px;
+  height: auto;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .file-upload-container video {
+  width: 200px;
+  height: auto;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-icons-container {
+  display: flex;
+  width: 500px;
+  height: 40px;
+  margin-top: 8px;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-icons-container .post-icons {
+  display: flex;
+  width: 428.27px;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-icons-container .post-icons .icon {
+  width: 36px;
+  height: 36px;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-icons-container .post-icons .icon .logo {
+  width: 20px;
+  margin: 0.3rem;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-icons-container .post-icons .icon .location-logo {
+  opacity: 0.5;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-icons-container .post-icons .file-upload input {
+  display: none;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-icons-container .post-btn-container {
+  margin-top: 8px;
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.container .container-2 .tweet-box .desktop-tweet-box .tweet-box-container .input-container .post-icons-container .post-btn-container .tweet-btn {
+  width: 67px;
+  height: 34px;
+  background-color: #1d9bf0;
+  color: white;
+  border: none;
+  padding: 7px;
+  border-radius: 2rem;
+  font-size: 15px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+.container .container-2 .tweet-box .mobile-tweet-box {
+  display: none;
+}
+.container .container-2 .posts {
+  display: flex;
+  flex-direction: column;
+  width: 585px;
+  max-width: 585px;
+}
+.container .container-2 .posts .post {
+  display: flex;
+  border-bottom: 1px #2f3336 solid;
+  padding: 12px 16px;
+}
+.container .container-2 .posts .post .profile-img {
+  margin-right: 12px;
+}
+.container .container-2 .posts .post .profile-img img {
+  width: 40px;
+  border-radius: 50%;
+}
+.container .container-2 .posts .post .content {
+  display: flex;
+  flex-direction: column;
+  width: 501px;
+}
+.container .container-2 .posts .post .content .post-info {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  margin-bottom: 2px;
+}
+.container .container-2 .posts .post .content .post-info .post-profile-info .post-user {
+  font-weight: 15px;
+  font-weight: bold;
+}
+.container .container-2 .posts .post .content .post-info .post-profile-info .post-username {
+  color: #4a4d50;
+  font-weight: 500;
+}
+.container .container-2 .posts .post .content .post-info .post-three-dot-option {
+  width: 34.75px;
+  height: 34.75px;
+}
+.container .container-2 .posts .post .content .post-info .post-three-dot-option .logo {
+  width: 18.75px;
+}
+.container .container-2 .posts .post .content .post-info .post-three-dot-option .like-logo {
+  width: 18.75px;
+  fill: #f91880;
+}
+.container .container-2 .posts .post .content .post-caption {
+  overflow-wrap: break-word;
+  font-size: 15px;
+}
+.container .container-2 .posts .post .content .post-caption .post-hashtag {
+  color: #1d9bf0;
+}
+.container .container-2 .posts .post .content .file-uploaded {
+  margin-top: 12px;
+}
+.container .container-2 .posts .post .content .file-uploaded img, .container .container-2 .posts .post .content .file-uploaded video {
+  width: 501px;
+  border-radius: 5px;
+}
+.container .container-2 .posts .post .content .post-icons {
+  display: flex;
+  margin-top: 12px;
+}
+.container .container-2 .posts .post .content .post-icons .icon {
+  display: flex;
+  width: 108.88px;
+  height: 20px;
+}
+.container .container-2 .posts .post .content .post-icons .icon .logo {
+  width: 18.75px;
+}
+.container .container-2 .posts .post .content .post-icons .share-icon {
+  width: 18.75px;
+}
+.container .container-2 .posts .post .content .post-icons .last-icon {
+  width: 18.75px;
+  margin-right: 13px;
+}
+.container .container-2 .floating-btn-container {
+  display: none;
+}
+.container .container-2::-webkit-scrollbar {
+  display: none;
+}
+.container .container-3 {
+  display: none;
+  width: 450px;
+  height: 100vh;
+  border-right: 1px solid #2f3336;
+  border-left: 1px solid #2f3336;
+}
+.container .container-3 .msg-header {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 53px;
+}
+.container .container-3 .msg-header .msg-user-profile-m {
+  display: none;
+  margin-right: 21px;
+}
+.container .container-3 .msg-header .msg-user-profile-m img {
+  width: 32px;
+  height: auto;
+  border-radius: 50%;
+}
+.container .container-3 .msg-header .msg-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.container .container-3 .msg-users .msg-user {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+.container .container-3 .msg-users .msg-user .msg-user-profile {
+  margin-right: 8px;
+}
+.container .container-3 .msg-users .msg-user .msg-user-profile img {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+}
+.container .container-3 .msg-users .msg-user .msg-user-info {
+  font-size: 15px;
+}
+.container .container-3 .msg-users .msg-user .msg-user-info .msg-user-username {
+  color: #4a4d50;
+}
+.container .bottom-navbar {
+  display: none;
+}
+.container .chat-container {
+  display: none;
+  width: 600px;
+  height: 100vh;
+  border-right: 1px solid #2f3336;
+}
+.container .chat-container .chat-header {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 53px;
+}
+.container .chat-container .chat-header .chat-back-btn {
+  display: none;
+  margin-right: 33px;
+}
+.container .chat-container .chat-header .chat-back-btn svg {
+  fill: #fff;
+  width: 20px;
+  height: auto;
+}
+.container .chat-container .chat-header .chat-user-name {
+  font-size: 17px;
+}
+.container .chat-container .messages {
+  display: flex;
+  flex-direction: column;
+  margin-top: 55px;
+  margin-bottom: 60px;
+}
+.container .chat-container .messages .message-send {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 50%;
+  overflow-wrap: break-word;
+  align-self: flex-end;
+  margin-right: 16px;
+  margin-bottom: 10px;
+  background-color: #1d9bf0;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border-bottom-right-radius: 5px;
+}
+.container .chat-container .messages .message-receive {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 50%;
+  overflow-wrap: break-word;
+  align-self: flex-start;
+  margin-left: 16px;
+  margin-bottom: 10px;
+  background-color: #45484b;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border-bottom-left-radius: 5px;
+}
+.container .chat-container .chat-input-container {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  width: 600px;
+  height: 56px;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #2f3336;
+}
+.container .chat-container .chat-input-container .chat-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+  border-radius: 15px;
+  background-color: #202327;
+  padding: 0 10px;
+}
+.container .chat-container .chat-input-container .chat-input input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+.container .chat-container .chat-input-container .chat-input input:focus {
+  outline: none;
+  caret-color: #fff;
+  color: #fff;
+}
+.container .chat-container .chat-input-container .chat-input .chat-send-btn svg {
+  width: 20px;
+  height: auto;
+  fill: #1d9bf0;
+}
+
+@media all and (max-width: 500px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .container .navigation-section {
+    position: absolute;
+    left: 0;
+    transform: translate(-100%);
+  }
+  .container .navigation-section .desktop-nav-container {
+    display: none;
+  }
+  .container .navigation-section .mobile-nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 896px;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container {
+    margin: 0;
+    padding: 0;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    margin: 0;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .profile-icon {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .profile-icon .image img {
+    width: 40px;
+    border-radius: 50%;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .profile-icon .add-info {
+    width: 32px;
+    height: 32px;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .profile-icon .add-info .add-btn {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    border: 1px white solid;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .profile-user {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3px;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .profile-user .name {
+    font-size: 17px;
+    font-weight: bold;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .profile-user .username {
+    font-size: 15px;
+    color: #4a4d50;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .follow-info {
+    margin-top: 12px;
+    font-size: 15px;
+    display: flex;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .follow-info .following {
+    margin-right: 20px;
+  }
+  .container .navigation-section .mobile-nav-container .profile-container .profile-info .follow-info .gray {
+    color: #4a4d50;
+  }
+  .container .navigation-section .mobile-nav-container .twitter-icon-container {
+    border-bottom: 1px #2f3336 solid;
+  }
+  .container .navigation-section .mobile-nav-container .twitter-icon-container .twitter-icon {
+    padding: 16px;
+    display: flex;
+  }
+  .container .navigation-section .mobile-nav-container .twitter-icon-container .twitter-icon .icon {
+    width: 24px;
+    fill: white;
+    margin-right: 24px;
+  }
+  .container .navigation-section .mobile-nav-container .twitter-icon-container .twitter-icon .text {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .container .container-2 {
+    width: 100%;
+  }
+  .container .container-2 .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .container-2 .header .profile-img {
+    padding: 0.6rem 0 0 0.6rem;
+  }
+  .container .container-2 .header .profile-img img {
+    width: 2.2rem;
+    border-radius: 50%;
+  }
+  .container .container-2 .header .logo-container {
+    padding: 0.6rem 0 0 0.6rem;
+  }
+  .container .container-2 .header .logo-container .logo {
+    width: 1.5rem;
+    margin-right: 1rem;
+  }
+  .container .container-2 .header .settings {
+    padding: 0.6rem 0.6rem 0 0;
+  }
+  .container .container-2 .header .settings .settings-icon {
+    width: 1.5rem;
+  }
+  .container .container-2 .top-container .settings {
+    display: none;
+  }
+  .container .container-2 .tweet-box .desktop-tweet-box {
+    display: none;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box {
+    display: none;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .header-container .header {
+    height: 53px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .header-container .header .back-container {
+    height: 20px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .header-container .header .back-container .icon {
+    width: 20px;
+    fill: white;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .header-container .header .post-btn-container {
+    display: flex;
+    width: 153.11px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .header-container .header .post-btn-container .draft {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d9bf0;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .header-container .header .post-btn-container .tweet-btn-container {
+    padding-left: 13px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .header-container .header .post-btn-container .tweet-btn-container .tweet-btn {
+    width: 64.56px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: #1d9bf0;
+    border: none;
+    border-radius: 9999px;
+    opacity: 0.5;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .img-text {
+    display: flex;
+    height: 128px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .img-text .img {
+    margin-right: 12px;
+    padding-top: 12px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .img-text .img img {
+    width: 40px;
+    border-radius: 50%;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .img-text .text {
+    padding: 18px 2px 14px 2px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .img-text .text .post-container {
+    height: 96px;
+    width: 326px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .img-text .text .post-container .post-input {
+    background-color: black;
+    width: 100%;
+    color: #45484b;
+    border: none;
+    font-size: 20px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .img-text .text .post-container .post-input:focus {
+    outline: none;
+    color: white;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .file-upload-container-m {
+    display: none;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .file-upload-container-m img {
+    width: 100px;
+    height: auto;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .input-container .input .file-upload-container-m video {
+    width: 100px;
+    height: auto;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .icons-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 8px 16px;
+    height: 93px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .icons-container .reply-container {
+    height: 37px;
+    border-bottom: 1px #2f3336 solid;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .icons-container .reply-container .reply {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    height: 22px;
+    font-weight: bold;
+    margin-bottom: 13px;
+    color: #1d9bf0;
+    padding: 0 4px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .icons-container .reply-container .reply .icon {
+    width: 16px;
+    height: 16px;
+    fill: #1d9bf0;
+    margin-right: 4px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .icons-container .icons {
+    display: flex;
+    align-items: center;
+    height: 61.7px;
+    margin-top: 8px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .icons-container .icons .icon .logo {
+    width: 20px;
+    margin-right: 16px;
+    margin-top: 5px;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .icons-container .icons .icon .location-logo {
+    opacity: 0.5;
+  }
+  .container .container-2 .tweet-box .mobile-tweet-box .tweet-box-container .icons-container .icons .file-upload-m input {
+    display: none;
+  }
+  .container .container-2 .posts {
+    width: 414px;
+  }
+  .container .container-2 .posts .post .content {
+    width: 328px;
+  }
+  .container .container-2 .posts .post .content .file-uploaded img, .container .container-2 .posts .post .content .file-uploaded video {
+    width: 328px;
+  }
+  .container .container-2 .posts .post .content .post-icons {
+    display: flex;
+  }
+  .container .container-2 .posts .post .content .post-icons .icon {
+    width: 65.63px;
+  }
+  .container .container-2 .posts .post .content .post-icons .share-icon {
+    width: 18.75px;
+  }
+  .container .container-2 .posts .post .content .post-icons .last-icon {
+    width: 18.75px;
+    margin-right: 13px;
+  }
+  .container .container-2 .floating-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 1.3rem;
+    bottom: 4.5rem;
+    background-color: #1d9bf0;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+  }
+  .container .container-2 .floating-btn-container .floating-tweet-box-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+  .container .container-3 {
+    display: none;
+    width: 100%;
+    max-width: 100%;
+  }
+  .container .container-3 .msg-header .msg-user-profile-m {
+    display: initial;
+  }
+  .container .container-3 .msg-header .msg-title {
+    font-size: 17px;
+  }
+  .container .bottom-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 53.5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    border-top: 1px solid #2f3336;
+  }
+  .container .bottom-navbar .nav-item svg {
+    width: 26.25px;
+    fill: #fff;
+  }
+}
+.show {
+  transform: translate(0%) !important;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body .login-container {
+  max-width: 400px;
+  margin: 30vh auto;
+  color: #fff;
+}
+.body .login-container .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+.body .login-container .header .logo {
+  width: 50px;
+  margin-bottom: 10px;
+}
+.body .login-container .main .form-control {
+  margin-bottom: 20px;
+}
+.body .login-container .main .form-control input {
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  width: 300px;
+  height: 56px;
+  border: 1px solid #1d9bf0;
+  border-radius: 5px;
+}
+.body .login-container .main .form-control input:focus {
+  color: white;
+  background-color: black;
+}
+.body .login-container .main .login-btn {
+  width: 100%;
+  height: 50px;
+  color: white;
+  border-radius: 2rem;
+  background-color: #1d9bf0;
+  border: none;
+  font-weight: bolder;
+}/*# sourceMappingURL=styles.css.map */
