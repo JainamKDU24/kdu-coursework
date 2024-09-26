@@ -1,0 +1,76 @@
+/* Selectors */
+header {
+    color: #fff;
+    text-align: center;
+    margin-top:0%;
+    width:100%;
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+    position:sticky;
+    top:0;
+    left: 0;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/587fc3e546c3c40b37363b71/1572274776794-X28FOBF0QUT8T1UPBGHM/Home-Header-Opt-1-Dark.png?format=2500w");  
+object-fit: fill;}
+/* CSS Combinators */
+header + aside {
+    margin-top: 5px; 
+}
+/* Box Model */
+ol {
+    list-style-type: none;
+    padding: 0;
+}
+body{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/587fc3e546c3c40b37363b71/1572274776794-X28FOBF0QUT8T1UPBGHM/Home-Header-Opt-1-Dark.png?format=2500w");  
+    background-size: cover;
+}
+/* Pseudo selectors */
+a {
+    color: #ddd;
+    padding: 10vh;
+    margin: 1vh;
+    text-align: center;
+}
+a:hover {
+    font-weight: bolder;
+    font-size: x-large;
+}
+/*Box Model*/
+section {
+    padding: 1px;
+    margin: 3px;
+    box-sizing: content-box;
+    font-size: medium;
+    background-color: #fff;
+}
+footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 3px;
+    text-align: center;
+    margin-top: auto; 
+    font-size: medium;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/587fc3e546c3c40b37363b71/1572274776794-X28FOBF0QUT8T1UPBGHM/Home-Header-Opt-1-Dark.png?format=2500w");
+}
+/* Id selector */
+#About{
+    font-size: large;
+}
+/* Descendant selector */
+header > nav a:hover {
+    color:white; 
+    margin: 2rem 1rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:x-large;
+    font-style: normal;
+    font-weight: bolder;
+}
+/* Child Selector */
+.img-container > img {
+    background:white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:fill; 
+}
