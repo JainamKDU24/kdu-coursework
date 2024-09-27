@@ -1,0 +1,676 @@
+/* Variables */
+$desktop-width: 1079px; /* Equivalent to 1079px */
+$desktop-height: 726px; /* Equivalent to 726px */
+$mobile-width: 1075px; /* Equivalent to 414px */
+$mobile-height: 727px; /* Equivalent to 896px */
+$navbar-width: 16.25rem; /* Reduced from 17.25rem to make the navbar smaller */
+$post-button-width: 13rem; /* Equivalent to 240px */
+$post-button-height: 3.125rem; /* Equivalent to 70px */
+$post-button-border-radius: 1.6rem; /* Equivalent to 35px */
+$logo-text-distance: 1.5rem; /* Equivalent to 28px */
+
+/* Common styles for both views */
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Desktop View */
+@media (min-width: $desktop-width) and (min-height: $desktop-height) {
+    .mobile-app{
+        display: none;
+    }
+    .desktop-app{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        // grid-template-columns: 2fr 5fr;
+        flex-direction: column;
+        .left{
+            .navigation-section {  
+                display: grid;          
+                margin-left: 5rem;
+                position: fixed;
+                width: $navbar-width;
+                height: 100%;
+                background-color: #000000;
+                color: #ffffff;
+                font-size: 1.2rem;
+                left: 0;
+                top: 0;
+                grid-template-rows: auto repeat(12, 0.9fr) 0.7fr 1fr;
+                padding-top: 0.625rem;
+                .main-logo{
+                    margin-left: 1.1rem;
+                    margin-right: $logo-text-distance;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+                .nav-logo,
+                .messages-logo,
+                .grok-logo,
+                .explore-logo,
+                .notifications-logo,
+                .lists-logo,
+                .bookmarks-logo,
+                .communities-logo,
+                .premium-logo,
+                .profile-logo,
+                .more-logo {
+                    margin-left: 1rem;
+                    margin-right: $logo-text-distance;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            
+                .nav-item {
+                // padding: 0.3125rem;
+                width: $navbar-width;
+                margin-bottom: 0rem;
+                text-align: center;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            
+                &:hover {
+                    background-color: #1da1f2;
+                    font-weight: bold;
+                }
+            
+                &.active {
+                    background-color: #1da1f2;
+                    font-weight: bold;
+                }
+                }
+            }
+            
+            /* Add the new styles here */
+            .grid-container {
+                display: grid;
+                width: max-content;
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: 10px;
+            }
+            
+            .grid-item {
+                align-items: center;
+                .user-image {
+                    margin-left: 1.4rem;
+                    width: 2.0m;
+                    height: 2.0rem; 
+                    border-radius: 50%; 
+                    margin-bottom: 1.5rem; 
+                    align-self: center;
+                }
+            }
+            .grid-item2 {
+                margin-top: 0.25rem;
+                align-items: center;
+                .user-info {
+                    display: flex;
+                    .user {
+                        font-size: 1rem;
+                        color: white;
+                    }
+                    .user-username {
+                        font-size: 0.75rem;
+                        color: grey;
+                    }
+                    .post-three-dot-option{
+                        margin-left: 3rem;
+                        height: 1.5rem;   
+                        .logo{
+                            width: 1.5rem; 
+                            // margin: 0.3rem;
+                        }
+                    }
+                }
+            }
+            
+            .post-button {
+                position: relative;
+                margin: 2rem;
+                bottom: 1.5rem;
+                right: 1.5rem;
+                font-weight: bold;
+                background-color: #1da1f2;
+                color: #ffffff;
+                width: $post-button-width;
+                height: $post-button-height;
+                border: none;
+                border-radius: $post-button-border-radius;
+                font-size: 1.1rem;
+                cursor: pointer;
+                outline: none;
+            
+                &:hover {
+                background-color: #2290d4;
+                }
+            }
+        }   
+        .tweet-box{
+            margin-left:21rem;
+            display: flex;
+            border-bottom: 1px #2f3336 solid ;
+
+            .profile-icon{
+                padding: 0.6rem 0 0 0.6rem;
+                img{
+                    width: 2.2rem;
+                    border-radius: 50%;
+                }
+            }
+
+            .post-input-container{
+                display: flex;
+                flex-direction: column;   
+                width: 100%;
+
+                .post-text{
+                    margin: 1.1rem 0.8rem 0 0.8rem;
+                    .post-input{
+                        background-color: black;
+                        color: lightgray;
+                        border: none;
+                        font-size: 1.2rem;
+                    }
+
+                }
+
+                .post-icons-container{
+                    display: flex;
+                    margin-bottom: 0.5rem;
+                    .post-icons{
+                        width: 90%;
+                        margin: 1.5rem 0 0 0.5rem; 
+                        .logo{
+                            width: 1.5rem; 
+                            margin: 0.3rem;
+                        }
+
+                        .location-logo{
+                            opacity: 0.5;
+                        }
+                    }
+
+                    .post-btn-container{
+                        width: 30%;
+                        margin-top: 1.3rem;
+                        display: flex;
+                        align-items: center;
+
+                        .post-btn{
+                            width: 60%;
+                            background-color: #1d9bf0;
+                            color: white;
+                            padding: 0.5rem 0.3rem;
+                            border: none;
+                            border-radius: 2rem;
+                            font-size: 1rem;
+                            font-weight: bold;
+                            margin-left: 2rem;
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+        .posts{
+            display: flex;
+            flex-direction: column;
+            margin-left:21rem;
+            .post{
+                display: flex;
+                flex-direction: row;
+                border-bottom: 1px #2f3336 solid ;
+                .profile-icon{
+                    display: flex;
+                    padding: 0.6rem 0 0 0.6rem;
+                    margin-right: 0.8rem;
+                    img{
+                        height: 2.2rem;
+                        width: 2.2rem;
+                        border-radius: 50%;
+                    }  
+                }
+
+                .content{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0.7rem;
+                    width: 100%;
+
+                    .post-info{
+                        display: flex;
+                        justify-content: space-between;
+                        .post-profile-info{
+                            .post-user{
+                                font-weight: bold;
+                            }
+
+                            .post-username{
+                                font-weight: lighter;
+                                color: #4a4d50;
+                            }
+                        }
+
+                        .post-three-dot-option{
+                            height: 1.5rem;   
+                            .logo{
+                                width: 1.5rem; 
+                                // margin: 0.3rem;
+                            }
+                        }
+                    }
+
+                    .post-caption{
+                        overflow-wrap: break-word;
+
+                        .post-hashtag{
+                            color: #1d9bf0;
+                        }
+                    }
+
+                    .post-icons{
+                        display: flex;
+                        margin: 1rem 0 0.5rem 0; 
+                        .icon{
+                            margin-right: 5.65rem;
+                            .logo{
+                                width: 1.5rem; 
+                            }
+                        }
+
+                        .last-icon{
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+@media (max-width: $mobile-width) {
+    .desktop-app  {
+        display: none; 
+         
+    }
+    .mobile-app{
+        .navigation-section {  
+            display: none;
+            font-weight: bold;
+            // display: grid;          
+            // margin-left: 5rem;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 1.5rem;
+            left: 0;
+            top: 0;
+            grid-template-rows: auto repeat(12, 0.9fr) 0.7fr 1fr;
+            padding-top: 0.625rem;
+            .main-logo{
+                margin-left: 12rem;
+                margin-right: $logo-text-distance;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            .nav-logo{
+                margin-left: 1rem;
+                margin-right: $logo-text-distance;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        
+            .nav-item {
+            // padding: 0.3125rem;
+            margin-bottom: 0%;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        
+            &:hover {
+                background-color: #1da1f2;
+                font-weight: bold;
+            }
+        
+            &.active {
+                background-color: #1da1f2;
+                font-weight: bold;
+            }
+            }
+            .grid-container {
+                display: flex;
+                width: max-content;
+                flex-direction:column;
+                gap: 10px;
+            }
+            
+            .grid-item {
+                align-items: center;
+                .user-image {
+                    margin-left: 16px;
+                    width: 3.0rem;
+                    height: 3.0rem; 
+                    border-radius: 50%; 
+                    margin-top: 1rem; 
+                    align-self: center;
+                }
+            }
+            .grid-item2 {
+                // margin-top: 0.25rem;
+                align-items: center;
+                .user-info {
+                    display: flex;
+                    .user {
+                        margin-left: 16px;
+                        font-size: 1.5rem;
+                        color: white;
+                    }
+                    .user-username {
+                        font-weight: lighter;
+                        font-size: 1.25rem;
+                        color: grey;
+                    }
+                    .followers,
+                    .following{
+                        font-size: 1.1rem;
+                        font-weight: lighter;
+                        color: gray;
+                        .num{
+                            color: white;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .container-2 {
+            width: 100%;
+            .header {
+              display: flex;
+              justify-content: space-between;
+      
+              .profile-img {
+                padding: 0.6rem 0 0 0.6rem;
+                img {
+                  width: 2.2rem;
+                  border-radius: 50%;
+                }
+              }
+      
+              .logo-container {
+                padding: 0.6rem 0 0 0.6rem;
+                .logo {
+                  width: 1.5rem;
+                  margin-right: 1rem;
+                }
+              }
+      
+              .settings {
+                padding: 0.6rem 0.6rem 0 0;
+                .settings-icon {
+                  width: 1.5rem;
+                }
+              }
+            }
+            .post{
+                display: flex;
+                flex-direction: row;
+                border-bottom: 1px #2f3336 solid ;
+                .profile-icon{
+                    display: flex;
+                    padding: 0.6rem 0 0 0.6rem;
+                    margin-right: 0.8rem;
+                    img{
+                        height: 2.2rem;
+                        width: 2.2rem;
+                        border-radius: 50%;
+                    }  
+                }
+
+                .content{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 0.4rem;
+
+                    .post-info{
+                        display: flex;
+                        justify-content: space-between;
+                        .post-profile-info{
+                            .post-user{
+                                font-size: 1.25rem;
+                                font-weight: bold;
+                            }
+
+                            .post-username{
+                                font-size: 1rem;
+                                font-weight: lighter;
+                                color: #4a4d50;
+                            }
+                        }
+
+                        .post-three-dot-option{
+
+                            height: 1.5rem;   
+                            .logo{
+                                width: 1.5rem; 
+                            }
+                        }
+                    }
+
+                    .post-caption{
+                        overflow-wrap: break-word;
+                        font-size: 1rem;
+                        .post-hashtag{
+                            color: #1d9bf0;
+                        }
+                    }
+
+                    .post-icons{
+                        display: flex;
+                        margin: 1rem 0 0.5rem 0; 
+                        .icon{
+                            // margin-right: 5.65rem;
+                            .logo{
+                                width: 1.5rem; 
+                            }
+                        }
+
+                        .last-icon{
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+            .posts {
+              .post {
+                .content {
+                  width: 80%;
+                  .post-icons {
+                    .icon {
+                      margin-right: 2.65rem;
+                    }
+                    .last-icon {
+                      margin-right: 1rem;
+                    }
+                  }
+                }
+              }
+            }
+      
+            .floating-btn-container {
+              display: initial;
+              position: fixed;
+              right: 1rem;
+              bottom: 1rem;
+      
+              .floating-tweet-box-icon {
+                width: 4rem;
+                height: 4rem;
+                background-color: #1d9bf0;
+                border: none;
+                border-radius: 50%;
+                color: white;
+                font-size: 2rem;
+              }
+            }
+        }
+        .mobile-post{
+            display: none;
+        }
+        .tweet-box{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+    
+            .header-container{
+                .header{
+                    height: 53px;
+                    display: flex;
+                    justify-content: space-between  ;
+                    align-items: center;
+                    padding: 0 14px;
+    
+                    .back-container{
+                        height: 20px;
+                        .icon{
+                            width: 20px;
+                            fill: white;
+                        }
+                    }
+    
+                    .post-btn-container{
+                        display: flex;
+                        width: 153.11px;
+                        
+                        .draft{
+                            display: flex;
+                            align-items: center;
+                            padding: 0 16px;
+                            font-size: 15px;
+                            font-weight: 600;
+                            color: #1d9bf0;
+                        }
+                        .tweet-btn-container{
+                            padding-left: 13px;
+    
+                            #tweet-btn{
+                                width: 64.56px;
+                                height: 32px;
+                                font-size: 15px;
+                                font-weight: 600;
+                                color: white;
+                                background-color: #1d9bf0;
+                                border: none;
+                                border-radius: 9999px;
+                                opacity: 0.5;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+    
+            .input-container{
+                height: 128px;
+    
+                .input{
+                    padding: 0 16px;
+                    display: flex;
+                    flex-direction: column;
+    
+                    .img-text{
+                        display: flex;
+                        height: 128px;
+    
+                        .img{
+                            margin-right: 12px;
+                            padding-top: 12px;
+                            img{
+                                width: 40px;
+                                border-radius: 50%;
+                            }
+                        }
+                        .text{  
+                            padding: 18px 2px 14px 2px;
+                            .post-input-container{
+                                height: 96px;
+                                width: 326px;
+    
+                                .post-input{
+                                    background-color: black;
+                                    width: 100%;
+                                    color: #45484b;
+                                    border: none;
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .icons-container{
+                display: flex;
+                flex-direction: column;
+                padding: 0 16px 8px 16px;
+                height: 93px;
+    
+    
+                .reply-container{
+                    height: 37px;
+                    border-bottom: 1px #2f3336 solid;
+                    
+                    .reply{
+                        display: flex;
+                        align-items: center;
+                        font-size: 14px;
+                        height: 22px;
+                        font-weight: bold;
+                        margin-bottom: 13px;
+                        color: #1d9bf0;
+                        padding: 0 4px;
+                        .icon{
+                            width: 16px;
+                            height: 16px;
+                            fill: #1d9bf0;
+                            margin-right: 4px;
+                        }
+                    }
+                }
+    
+                .icons{
+                    display: flex;
+                    align-items: center;
+                    height: 61.7px;
+                    margin-top: 8px;
+                    .icon{
+                        .logo{
+                            width: 20px;
+                            margin-right: 16px;
+                            margin-top: 5px;
+                        }
+                        #like-post{
+                            border: none;
+                            .logo{
+                                fill:#f91880;
+                                
+                            }
+                        }
+    
+                        .location-logo{
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
